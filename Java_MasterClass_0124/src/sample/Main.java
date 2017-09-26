@@ -16,7 +16,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-
+    //here launch the window
     public static void main(String[] args) {
         launch(args);
     }
