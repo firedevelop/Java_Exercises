@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontscolors PUBLIC "-//NetBeans//DTD Editor Fonts and Colors settings 1.1//EN" "http://www.netbeans.org/dtds/EditorFontsColors-1_1.dtd">
+<fontscolors>
+    <fontcolor bgColor="ffeceba3" name="mark-occurrences"/>
+    <fontcolor foreColor="white" name="T_INLINE_HTML"/>
+    <fontcolor foreColor="ff6185a6" name="PHP_VARIABLE"/>
+    <fontcolor default="comment" name="comment"/>
+    <fontcolor name="mod-public"/>
+    <fontcolor default="field" name="mod-field"/>
+    <fontcolor name="mod-constructor">
+        <font style="bold"/>
+    </fontcolor>
+    <fontcolor foreColor="ff995f29" name="mod-method">
+        <font style="bold"/>
+    </fontcolor>
+    <fontcolor default="keyword" name="keyword"/>
+    <fontcolor name="mod-protected"/>
+    <fontcolor default="string" name="string"/>
+    <fontcolor default="separator" name="separator"/>
+    <fontcolor name="mod-local-variable"/>
+    <fontcolor name="mod-private"/>
+    <fontcolor name="mod-deprecated" strikeThrough="darkGray"/>
+    <fontcolor foreColor="white" name="PHP_CONTENT"/>
+    <fontcolor name="mod-class">
+        <font style="bold"/>
+    </fontcolor>
+    <fontcolor foreColor="ff6185a6" name="mod-parameter"/>
+    <fontcolor name="mod-unused" waveUnderlined="ff999999"/>
+    <fontcolor foreColor="white" name="phpopenclose">
+        <font style="bold"/>
+    </fontcolor>
+    <fontcolor default="operator" name="operator"/>
+    <fontcolor default="comment" name="phpdockeyword">
+        <font style="bold"/>
+    </fontcolor>
+    <fontcolor name="mod-static">
+        <font style="italic"/>
+    </fontcolor>
+    <fontcolor default="identifier" foreColor="ff9b703f" name="PHP_STRING"/>
+    <fontcolor name="mod-custom1">
+        <font style="bold"/>
+    </fontcolor>
+    <fontcolor foreColor="ff6185a6" name="heredocdelimiter"/>
+    <fontcolor default="identifier" foreColor="ff6185a6" name="identifier"/>
+    <fontcolor name="mod-abstract"/>
+    <fontcolor default="constant" foreColor="white" name="constant">
+        <font style="italic"/>
+    </fontcolor>
+</fontscolors>

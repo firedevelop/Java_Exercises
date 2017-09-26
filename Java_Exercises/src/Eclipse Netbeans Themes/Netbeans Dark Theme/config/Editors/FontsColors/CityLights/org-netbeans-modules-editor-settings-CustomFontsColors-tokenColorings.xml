@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontscolors PUBLIC "-//NetBeans//DTD Editor Fonts and Colors settings 1.1//EN" "http://www.netbeans.org/dtds/EditorFontsColors-1_1.dtd">
+<fontscolors>
+    <fontcolor foreColor="ff0099cc" name="identifier"/>
+    <fontcolor foreColor="ff006666" name="string">
+        <font name="Monaco" size="16"/>
+    </fontcolor>
+    <fontcolor name="warning" waveUnderlined="yellow"/>
+    <fontcolor foreColor="ffcc0033" name="keyword"/>
+    <fontcolor foreColor="white" name="whitespace"/>
+    <fontcolor foreColor="white" name="separator"/>
+    <fontcolor foreColor="white" name="operator"/>
+    <fontcolor name="url" underline="blue"/>
+</fontscolors>
