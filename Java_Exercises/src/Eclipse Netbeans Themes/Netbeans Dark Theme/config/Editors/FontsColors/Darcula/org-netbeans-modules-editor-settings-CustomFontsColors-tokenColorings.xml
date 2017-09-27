@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontscolors PUBLIC "-//NetBeans//DTD Editor Fonts and Colors settings 1.1//EN" "http://www.netbeans.org/dtds/EditorFontsColors-1_1.dtd">
+<fontscolors>
+    <fontcolor foreColor="white" name="identifier"/>
+    <fontcolor foreColor="yellow" name="number"/>
+    <fontcolor bgColor="ff131313" foreColor="ff006666" name="default">
+        <font name="Monaco" size="14"/>
+    </fontcolor>
+    <fontcolor foreColor="ff009966" name="string"/>
+    <fontcolor default="identifier" foreColor="ff00cccc" name="field"/>
+    <fontcolor foreColor="ff6a8759" name="char"/>
+    <fontcolor foreColor="ff990033" name="keyword">
+        <font name="Monaco" size="16"/>
+    </fontcolor>
+    <fontcolor foreColor="white" name="whitespace">
+        <font name="Monaco" size="16"/>
+    </fontcolor>
+</fontscolors>
