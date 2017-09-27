@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaFX-GridPane-Layout-Source-code/JavaFX-GridPane-Layout-Source-code.iml" filepath="$PROJECT_DIR$/JavaFX-GridPane-Layout-Source-code/JavaFX-GridPane-Layout-Source-code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaFX-HBox-Layout-Source-code/JavaFX-HBox-Layout-Source-code.iml" filepath="$PROJECT_DIR$/JavaFX-HBox-Layout-Source-code/JavaFX-HBox-Layout-Source-code.iml" />
+    </modules>
+  </component>
+</project>
