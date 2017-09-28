@@ -1,26 +1,17 @@
 package test;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.LinkedList;
 
 public class UsoEmpleado{
 	public static void main(String[]args) {
-		Empleado misEmpleados1=new Empleado("Juan", "2000");
-		Empleado misEmpleados2=new Empleado("Maria", "3000");
-		Set<Empleado> h=new HashSet<Empleado>();
-		h.add(misEmpleados1);
-		h.add(misEmpleados2);
-		Iterator<Empleado> it1=h.iterator();
-		while(it1.hasNext()) {
-			String nombre=it1.next().dameNombre();
-			if(nombre.equals("Maria")) {
-				it1.remove();
-			}
-		}
-		for(Empleado e:h) {
-			System.out.println(e.dameNombre()+e.dameSueldo());
-		}
+		LinkedList<String> l=new LinkedList<String>();
+		l.add("1");
+		l.add("2");
+		l.add("3");
+		System.out.println(l);
 		
+		l.addFirst("first");
+		l.addLast("last");
+		System.out.println(l);
 	}
 }
