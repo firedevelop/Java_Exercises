@@ -1,4 +1,4 @@
-package sample;
+package VBox;
 
 public class Controller {
 }

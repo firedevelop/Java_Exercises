@@ -39,9 +39,11 @@
     <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" text="Red" toggleGroup="$colorToggleGroup"/>
     <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="3" text="Blue" toggleGroup="$colorToggleGroup" selected="true"/>
     <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="4" text="Green" toggleGroup="$colorToggleGroup"/>
-
-
-    <VBox GridPane.rowIndex="0" GridPane.columnIndex="5">
+	<CheckBox text="indeterminate" GridPane.rowIndex="3" indeterminate="true" />
+	<CheckBox text="cheked" GridPane.rowIndex="4" selected="true" />
+	<CheckBox text="unchecked" GridPane.rowIndex="5" selected="false" />
+	
+    <VBox GridPane.rowIndex="3" GridPane.columnIndex="6">
         <CheckBox text="Dog"/>
         <CheckBox text="Cat"/>
         <CheckBox text="Bird"/>
