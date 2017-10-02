@@ -45,7 +45,6 @@
             </ImageView>
         </graphic>
     </Label>
-
     <fx:define>
         <ToggleGroup fx:id="colorToggleGroup"/>
     </fx:define>
