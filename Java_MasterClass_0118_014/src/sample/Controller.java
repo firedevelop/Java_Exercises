@@ -9,7 +9,7 @@ public class Controller {
     private TextField nameField;
 
     @FXML
-    public void onAction() {
+    public void onButtonClicked() {
         System.out.println("Hello, " + nameField.getText());
     }
 }

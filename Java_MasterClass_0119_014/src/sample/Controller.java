@@ -12,8 +12,9 @@ public class Controller {
     private Button helloButton;
     @FXML
     private Button byeButton;
-
+    
     @FXML
+    //initialize() hace que los botones estén deshabilitados cuando la aplicacion se inicia por primera vez
     public void initialize() {
         helloButton.setDisable(true);
         byeButton.setDisable(true);
@@ -31,6 +32,7 @@ public class Controller {
     @FXML
     public void handleKeyReleased() {
         String text = nameField.getText();
+        // si escribimos espacios en blanco al comienzo del TextField lo ignora gracias a trim, y no se habilitan los botones hasta que no insertemos un caracter.
         boolean disableButtons = text.isEmpty() || text.trim().isEmpty();
         helloButton.setDisable(disableButtons);
         byeButton.setDisable(disableButtons);

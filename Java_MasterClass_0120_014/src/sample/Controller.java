@@ -30,11 +30,11 @@ public class Controller {
             System.out.println("Bye, " + nameField.getText());
         }
 
-        try {
-            Thread.sleep(10000);
-        } catch(InterruptedException event) {
+      //  try {
+           // Thread.sleep(10000);
+      //  } catch(InterruptedException event) {
             // we don't care about this
-        }
+      //  }
         if(ourCheckBox.isSelected()) {
             nameField.clear();
             helloButton.setDisable(true);
@@ -49,8 +49,9 @@ public class Controller {
         helloButton.setDisable(disableButtons);
         byeButton.setDisable(disableButtons);
     }
-
+    // esto sirve para mostrar en consola si el checkbox esta marcado
     public void handleChange() {
+    	// aqui le decimos que si esta chekeado nos muestre "the checkbox is checked" y en caso contrario "not checked"
         System.out.println("The checkbox is " + (ourCheckBox.isSelected() ? "checked" : "not checked"));
     }
 }

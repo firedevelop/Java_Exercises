@@ -1,8 +1,12 @@
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
-<GridPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml"
-		  alignment="CENTER">
-	<TextField fx:id="name" GridPane.columnIndex="0" GridPane.rowIndex="0"></TextField>
-	<Button text="send" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#onButtonClicked"></Button>
+<GridPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+	<TextField fx:id="name" GridPane.columnIndex="0" GridPane.rowIndex="0">
+
+	</TextField>
+	<Button onAction="#onAction" text="send" GridPane.columnIndex="0" GridPane.rowIndex="0">
+
+	</Button>
+
 </GridPane>
