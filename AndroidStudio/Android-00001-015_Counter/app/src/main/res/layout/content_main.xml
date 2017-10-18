@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.firedevelop.android_00001_011_counter.MainActivity"
+    tools:context="com.firedevelop.android_00001_015_counter.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <RelativeLayout
@@ -58,8 +57,12 @@
             android:id="@+id/textoResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/incrementar"
+            android:layout_alignStart="@+id/incrementar"
+            android:layout_below="@+id/contador"
+            android:layout_marginTop="21dp"
             android:layout_weight="1"
-            android:text="textoResultado"
+            android:textSize="56dp"
             tools:layout_editor_absoluteX="230dp"
             tools:layout_editor_absoluteY="16dp" />
 
@@ -67,14 +70,12 @@
             android:id="@+id/contador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textoResultado"
-            android:layout_marginTop="25dp"
             android:layout_weight="1"
             android:text="contador"
             tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="16dp" />
+            tools:layout_editor_absoluteY="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
