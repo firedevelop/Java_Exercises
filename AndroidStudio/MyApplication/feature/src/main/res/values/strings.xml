@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="button">Button</string>
+    <string name="num1">num1</string>
+    <string name="num2">num2</string>
+    <string name="sumar" />
+</resources>

@@ -9,6 +9,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethod;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,25 +19,14 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-  public int contador;
-    TextView total;
+    public TextView total;
+    public int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        total=(TextView)findViewById(R.id.total);
-        contador=0;
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            total=()
 
-        EventoTeclado teclado=new EventoTeclado();
-        EditText num_reset=(EditText)findViewById(R.id.num_reset);
-        num_reset.setOnEditorActionListener(teclado);
-    }
-    class EventoTeclado implements TextView.OnEditorActionListener{
-
-        @Override
-        public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-            return false;
-        }
     }
 }

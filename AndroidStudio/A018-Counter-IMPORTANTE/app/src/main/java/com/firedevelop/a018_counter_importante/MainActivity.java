@@ -11,8 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    public int contador;
     TextView total;
+    public int contador;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +28,10 @@ public class MainActivity extends Activity {
     class EventoTeclado implements TextView.OnEditorActionListener{
 
         @Override
-        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-            if(actionId==EditorInfo.IME_ACTION_DONE){
+        public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+            //IME significa Input Managment Editor, o sea en nuestro caso el teclado. Y le decimos que ya hemos terminado de usarlo, es decir ..._DONE
+            if(i==EditorInfo.IME_ACTION_DONE){
+                //llamamos a resetear, pero como nos obliga la API a pasarle un parametro y nosotro no queremos pasarle nada, usaremos null y funcionara
                 resetear(null);
             }
             return false;
@@ -55,12 +57,15 @@ public class MainActivity extends Activity {
         EditText num_reset=(EditText)findViewById(R.id.num_reset);
         try {
             contador = Integer.parseInt(num_reset.getText().toString());
+            // si no capturamos esta excepcion, cuando un usuario pulse directamente el boton reset si hacer clic previamente en el teclado para insertar un numero, el programa se caera, por no le estas pasando un cero, sino un cero virtual, ya que este EditText esta configurado con la propiedad de EditText hint, es decir que muestra un cero virtual que no es un int solo de uso visual para que no quede en blanco el EditText
         }catch (Exception e){
             contador=0;
         }
         //aqui lo que hacemos es volver a establecer en 0 el EditText de los numeros negativos. Si no lo hacemos se quedaría fijo el ultimo numero elegido por teclado
         num_reset.setText("");
+        //aqui le decimos que cual es el metodo de entrada que estamos usando y que lo meta almacena en "miteclado"
         InputMethodManager miteclado=(InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+        // aqui le decimos que oculte el metodo de entrada o sea miteclado
         miteclado.hideSoftInputFromWindow(num_reset.getWindowToken(),0);
         total.setText("" + contador);
     }
