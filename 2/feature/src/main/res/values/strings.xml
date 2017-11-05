@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Stones App</string>
+    <string name="title">Stones</string>
+    <string name="home">Home</string>
+    <string name="play">Play</string>
+    <string name="exit">Exit</string>
+    <string name="info">Information</string>
+    <string name="menuAction_config">Configuration</string>
+    <string name="menuAction_info">Information</string>
+    <string name="page_info">This is the information  page</string>
+
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Rocas App</string>
+    <string name="title">Rocas</string>
+    <string name="inicio">¡Jugar!</string>
+    <string name="config">Configuracion</string>
+    <string name="salir">Salir</string>
+    <string name="actionMenu_info">Información</string>
+    <string name="actionMenu_config">Configuracion</string>
+    <string name="info">info</string>
+</resources>

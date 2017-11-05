@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Stone App</string>
+    <string name="name">Stones</string>
+    <string name="home">Home</string>
+    <string name="config">Configuration</string>
+    <string name="config_menu">Configuration</string>
+    <string name="info">Information</string>
+    <string name="info_menu">Information</string>
+    <string name="exit">Exit</string>
+    <string name="info_app">Information App</string>
+    <string name="configuration">Configuration</string>
+</resources>

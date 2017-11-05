@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stones App</string>
+    <string name="title">Stones</string>
+    <string name="inicio">Play!</string>
+    <string name="config">Config</string>
+    <string name="salir">Exit</string>
+    <string name="actionMenu_info">Information</string>
+    <string name="actionMenu_config">Configuration</string>
+    <string name="info">info</string>
+</resources>
