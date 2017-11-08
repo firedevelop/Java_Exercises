@@ -73,7 +73,7 @@ public class Partida {
             cuantasLleva = 0;
         } // fin for principal
 
-        return -
+        return -1;
     }
 
     /**
