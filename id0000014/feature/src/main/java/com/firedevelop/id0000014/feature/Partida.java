@@ -7,7 +7,7 @@ import java.util.Random;
  */
 
 public class Partida {
-
+    // la declaramos final para que no pueda modificarse
     private final int DIFICULTAD;
     private int jugador;
     private int [] marcadas;
@@ -21,9 +21,13 @@ public class Partida {
             , {2,4,6}};
     /**
      * Constructor
+     * tiene que recibir por parametro una dificultad, y dicha dificultad se almacenra en la
      */
     public Partida(int dificultad){
+        //this.DIFICULTAD se refiere al campo de la clase "public final int dificultad"
+        //y el otro "dificultad" se refiere al argumento del constructor "public Partida(int dificultad)"
         this.DIFICULTAD = dificultad;
+        // al jugador 1 le estamos asignando que sea el circulo
         jugador = 1;
         rellenarTablaMarcadas();
     }
@@ -69,11 +73,11 @@ public class Partida {
             cuantasLleva = 0;
         } // fin for principal
 
-        return -1;
+        return -
     }
 
     /**
-     * Método para juegue la IA.
+     * Método para juegue la IA. (que significa INTELIGENCIA ARTIFICIAL)
      * @return devuelve una casilla en función del nivel de juego.
      *                  0 => no gana nadie.
      *                  1 => gana el jugador 1.
@@ -103,9 +107,9 @@ public class Partida {
                 if( ! casillaOcupada(c) ) return c;
         }
 
-        Random azar = new Random();
+        Random azar = new Random(); // almacena el numero al random
         do{
-            casilla = azar.nextInt(9);
+            casilla = azar.nextInt(9); // genera un numero comprendido entre 0 y 9
         }while ( casillaOcupada(casilla) );
         marcadas[casilla] = jugador;
         return casilla;

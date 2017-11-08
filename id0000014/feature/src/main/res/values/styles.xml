@@ -19,7 +19,6 @@
         <item name="android:minWidth">@dimen/anchoMinBoton</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:minHeight">@dimen/altoMinBoton</item>
-        <item name="android:layout_margin">@dimen/margenBoton</item>
         <item name="android:textSize">@dimen/textoBoton</item>
         <item name="android:onClick">aJugar</item>
         <item name="android:background">@drawable/boton</item>
@@ -36,7 +35,7 @@
     <style name="casilla">
         <item name="android:layout_width">@dimen/casilla</item>
         <item name="android:layout_height">@dimen/casilla</item>
-        <item name="android:layout_margin">20dp</item>
+        <item name="android:layout_margin">2dp</item>
         <item name="android:src">@drawable/casilla</item>
         <item name="android:onClick">toque</item>
     </style>

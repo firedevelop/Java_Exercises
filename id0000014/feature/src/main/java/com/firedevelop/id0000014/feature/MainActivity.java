@@ -39,6 +39,8 @@ public class MainActivity extends Activity {
         }
 
         jugadores = (vista.getId() == R.id.dosJugador) ? 2 : 1;
+        // tanto 1 jugador como 2 jugadores son lo que llamamos "vista" y cuando llamamos al metodo aJugar le vamos a pasar por argumento una vista la de 1 o 2 jugadores
+        // si no se cumple esta condicion por defecto sera 1 jugador, en caso contrario jugador se sobreescribe y pasaria a ser 2.
         if (vista.getId() == R.id.dosJugador){
             jugadores = 2;
             findViewById(R.id.unJugador).setAlpha(0);
@@ -46,15 +48,16 @@ public class MainActivity extends Activity {
             findViewById(R.id.normal).setAlpha(0);
             findViewById(R.id.imposible).setAlpha(0);
         } else {
+            // aqui indica que esta jugando 1 jugador
             jugadores = 1;
             findViewById(R.id.dosJugador).setAlpha(0);
         }
-
+    // aqui almacenamos e identificamos a este grupo de radiobuttons que muestran la dificulad
         RadioGroup configDificultad = findViewById(R.id.configDificultad);
         int id = configDificultad.getCheckedRadioButtonId();
 
         int dificultad;
-
+    // establecemos los distintos niveles de dificultad con 0, 1 y 2
         if (id == R.id.normal) {
             dificultad = 1;
             findViewById(R.id.facil).setAlpha(0);
@@ -70,22 +73,25 @@ public class MainActivity extends Activity {
             findViewById(R.id.normal).setAlpha(0);
             findViewById(R.id.imposible).setAlpha(0);
         }
-
+        // aqui le pasamos al constructor de esta clase la difultad, para que la aplique antes de comenzar la partida
         partida = new Partida(dificultad);
+        // aqui deshabilitamos los botones para que no se muestren una vez elegidas las opciones
         findViewById(R.id.unJugador).setEnabled(false);
         findViewById(R.id.facil).setEnabled(false);
         findViewById(R.id.normal).setEnabled(false);
         findViewById(R.id.imposible).setEnabled(false);
         findViewById(R.id.dosJugador).setEnabled(false);
+        // setAlpha (0) es lo mismo que false, lo usamos por que me parece que no existe al opcion de setEnable para RadioGroup
         //((RadioGroup) findViewById(R.id.configDificultad)).setAlpha(0);
     }
 
     /**
      * Metodo que realiza las tareas correspondientes cuando el jugador pulsa una casilla.
      * @param vista La vista de la casilla pulsada.
+     * Es decir el metodo toque se va a encargar de averiguar cual es la casilla que se a pulsado, y almacenara dicho valor en la variable "casilla"
      */
     public void toque(View vista){
-        // Si no se ha iniciado la partida que no haga nada.
+        // Si no se ha iniciado la partida que no haga nada, en caso contrario, el usuario podria tocar las casillas antes de haber seleccionado los jugadores y dificultad
         if (partida == null) return;
 
         int casilla = 0;
@@ -97,7 +103,11 @@ public class MainActivity extends Activity {
         }
 
         // Mostrar un mensaje de tipo Toast
+        // Toast.LENGTH_SHORT es el tiempo que va a durar el popup es decir un rato corto.
         //Toast.makeText(this , "Has pulsado la casilla " + casilla, Toast.LENGTH_SHORT).show();
+        //toast.setGravity(Gravity.CENTER); // esto es para decirle donde se va a mostar, es decir en el centro de la pantalla
+        // toast.show(); // y con esto le decimos que lo muestre el toast
+
 
         if( partida.casillaOcupada(casilla) ){
             return;
