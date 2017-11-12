@@ -1,0 +1,191 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(89,124,194); }
+.s1 { color: rgb(174,181,189); }
+.s2 { color: rgb(92,122,184); }
+.s3 { color: rgb(38,125,255); }
+.s4 { color: rgb(122,122,122); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.firedevelop.id0000014.feature</span><span class="s2">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">android.app.Activity</span><span class="s2">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.app.AlertDialog</span><span class="s2">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s2">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.View</span><span class="s2">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.ImageView</span><span class="s2">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.RadioGroup</span><span class="s2">;</span><span class="s1"> 
+ 
+</span><span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">Activity { 
+    </span><span class="s0">private int </span><span class="s1">jugadores</span><span class="s2">;</span><span class="s1"> 
+    </span><span class="s0">private int </span><span class="s1">[] casillas</span><span class="s2">;</span><span class="s1"> 
+    </span><span class="s0">private <a href="Partida.java.html">Partida</a> </span><span class="s1">partida</span><span class="s2">;</span><span class="s1"> 
+ 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s2">;</span><span class="s1"> 
+        setContentView(R.layout.activity_main)</span><span class="s2">;</span><span class="s1"> 
+ 
+        rellenarTablaCasillas()</span><span class="s2">;</span><span class="s1"> 
+    } 
+ 
+ 
+    </span><span class="s0">public void </span><span class="s1">aJugar(View vista){ 
+        ImageView imagen</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">casilla:casillas){ 
+            imagen = findViewById(casilla)</span><span class="s2">;</span><span class="s1"> 
+            imagen.setImageResource(R.drawable.casilla)</span><span class="s2">;</span><span class="s1"> 
+        } 
+ 
+        jugadores = (vista.getId() == R.id.dosJugador) ? </span><span class="s3">2 </span><span class="s1">: </span><span class="s3">1</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(vista.getId() == R.id.dosJugador){ 
+            jugadores = </span><span class="s3">2</span><span class="s2">;</span><span class="s1"> 
+            findViewById(R.id.unJugador).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+            findViewById(R.id.facil).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+            findViewById(R.id.normal).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+            findViewById(R.id.imposible).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        } </span><span class="s0">else </span><span class="s1">{ 
+            jugadores = </span><span class="s3">1</span><span class="s2">;</span><span class="s1"> 
+            findViewById(R.id.dosJugador).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        } 
+        RadioGroup configDificultad = findViewById(R.id.configDificultad)</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">int </span><span class="s1">id = configDificultad.getCheckedRadioButtonId()</span><span class="s2">;</span><span class="s1"> 
+ 
+        </span><span class="s0">int </span><span class="s1">dificultad</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(id == R.id.normal) { 
+            dificultad = </span><span class="s3">1</span><span class="s2">;</span><span class="s1"> 
+           findViewById(R.id.facil).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+           findViewById(R.id.imposible).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        } 
+        </span><span class="s0">else if </span><span class="s1">(id == R.id.imposible) { 
+            dificultad = </span><span class="s3">2</span><span class="s2">;</span><span class="s1"> 
+            findViewById(R.id.facil).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+            findViewById(R.id.normal).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        } 
+        </span><span class="s0">else </span><span class="s1">{ 
+            dificultad = </span><span class="s3">0</span><span class="s2">;</span><span class="s1"> 
+            findViewById(R.id.normal).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+            findViewById(R.id.imposible).setAlpha(</span><span class="s3">0</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        } 
+        partida = </span><span class="s0">new <a href="Partida.java.html">Partida</a></span><span class="s1">(dificultad)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.unJugador).setEnabled(</span><span class="s0">false</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.facil).setEnabled(</span><span class="s0">false</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.normal).setEnabled(</span><span class="s0">false</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.imposible).setEnabled(</span><span class="s0">false</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.dosJugador).setEnabled(</span><span class="s0">false</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+    } 
+ 
+ 
+    </span><span class="s0">public void </span><span class="s1">toque(View vista){ 
+        </span><span class="s0">if </span><span class="s1">(partida == </span><span class="s0">null</span><span class="s1">) </span><span class="s0">return</span><span class="s2">;</span><span class="s1"> 
+ 
+        </span><span class="s0">int </span><span class="s1">casilla = </span><span class="s3">0</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s2">; </span><span class="s1">i &lt; </span><span class="s3">9</span><span class="s2">; </span><span class="s1">i++){ 
+            </span><span class="s0">if</span><span class="s1">( casillas[i] == vista.getId() ){ 
+                casilla = i</span><span class="s2">;</span><span class="s1"> 
+                </span><span class="s0">break</span><span class="s2">;</span><span class="s1"> 
+            } 
+        } 
+ 
+ 
+ 
+        </span><span class="s0">if</span><span class="s1">( partida.casillaOcupada(casilla) ){ 
+            </span><span class="s0">return</span><span class="s2">;</span><span class="s1"> 
+        } 
+ 
+        marca(casilla)</span><span class="s2">;</span><span class="s1"> 
+        compruebaResultado()</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(partida == </span><span class="s0">null</span><span class="s1">) </span><span class="s0">return</span><span class="s2">; </span><span class="s4">// Si acaba la partida esta toma el valor de null.</span><span class="s1"> 
+ 
+        </span><span class="s0">if</span><span class="s1">(jugadores == </span><span class="s3">1</span><span class="s1">) { 
+            casilla = partida.ia()</span><span class="s2">;</span><span class="s1"> 
+            marca(casilla)</span><span class="s2">;</span><span class="s1"> 
+            compruebaResultado()</span><span class="s2">;</span><span class="s1"> 
+        } 
+ 
+    } 
+ 
+ 
+    </span><span class="s0">private void </span><span class="s1">compruebaResultado(){ 
+        </span><span class="s0">int </span><span class="s1">resultado = partida.turno()</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">( resultado &gt; </span><span class="s3">0 </span><span class="s1">){ 
+            termina(resultado)</span><span class="s2">;</span><span class="s1"> 
+        } 
+    } 
+ 
+ 
+    </span><span class="s0">private void </span><span class="s1">termina(</span><span class="s0">int </span><span class="s1">resultado) { 
+        String mensaje</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">( resultado == </span><span class="s3">1 </span><span class="s1">) mensaje = getResources().getString(R.string.circulosGanan)</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">else if</span><span class="s1">( resultado == </span><span class="s3">2 </span><span class="s1">) mensaje = getResources().getString(R.string.aspasGanan)</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">else </span><span class="s1">mensaje = getResources().getString(R.string.empate)</span><span class="s2">;</span><span class="s1"> 
+        generarMensaje(mensaje)</span><span class="s2">;</span><span class="s1"> 
+ 
+ 
+        partida = </span><span class="s0">null</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.unJugador).setEnabled(</span><span class="s0">true</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.unJugador).setAlpha(</span><span class="s3">1</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+ 
+        findViewById(R.id.facil).setAlpha(</span><span class="s3">1</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.facil).setEnabled(</span><span class="s0">true</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.normal).setAlpha(</span><span class="s3">1</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.normal).setEnabled(</span><span class="s0">true</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.imposible).setAlpha(</span><span class="s3">1</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.imposible).setEnabled(</span><span class="s0">true</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+ 
+        findViewById(R.id.dosJugador).setEnabled(</span><span class="s0">true</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        findViewById(R.id.dosJugador).setAlpha(</span><span class="s3">1</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+ 
+        findViewById(R.id.configDificultad).setAlpha(</span><span class="s3">1</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">private void </span><span class="s1">generarMensaje(String mensaje) { 
+        AlertDialog.Builder alertDialogBuilder = </span><span class="s0">new </span><span class="s1">AlertDialog.Builder(</span><span class="s0">this</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        alertDialogBuilder.setTitle(getResources().getString(R.string.resultado))</span><span class="s2">;</span><span class="s1"> 
+        alertDialogBuilder.setMessage(mensaje)</span><span class="s2">;</span><span class="s1"> 
+        alertDialogBuilder.setCancelable(</span><span class="s0">false</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        alertDialogBuilder.setIcon(android.R.drawable.ic_dialog_info)</span><span class="s2">;</span><span class="s1"> 
+        alertDialogBuilder.setPositiveButton(getResources().getString(R.string.aceptar)</span><span class="s2">,</span><span class="s0">null</span><span class="s1">)</span><span class="s2">;</span><span class="s1"> 
+        alertDialogBuilder.show()</span><span class="s2">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">private void </span><span class="s1">marca(</span><span class="s0">int </span><span class="s1">casilla){ 
+        ImageView imagen = findViewById(casillas[casilla])</span><span class="s2">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">( partida.getJugador() == </span><span class="s3">1 </span><span class="s1">) { 
+            imagen.setImageResource(R.drawable.circulo)</span><span class="s2">;</span><span class="s1"> 
+        } </span><span class="s0">else</span><span class="s1">{ 
+            imagen.setImageResource(R.drawable.aspa)</span><span class="s2">;</span><span class="s1"> 
+        } 
+    } 
+ 
+ 
+ 
+    </span><span class="s0">private void </span><span class="s1">rellenarTablaCasillas(){ 
+        casillas = </span><span class="s0">new int</span><span class="s1">[</span><span class="s3">9</span><span class="s1">]</span><span class="s2">;</span><span class="s1"> 
+        casillas[</span><span class="s3">0</span><span class="s1">] = R.id.a1</span><span class="s2">;</span><span class="s1"> 
+        casillas[</span><span class="s3">1</span><span class="s1">] = R.id.a2</span><span class="s2">;</span><span class="s1"> 
+        casillas[</span><span class="s3">2</span><span class="s1">] = R.id.a3</span><span class="s2">;</span><span class="s1"> 
+        casillas[</span><span class="s3">3</span><span class="s1">] = R.id.b1</span><span class="s2">;</span><span class="s1"> 
+        casillas[</span><span class="s3">4</span><span class="s1">] = R.id.b2</span><span class="s2">;</span><span class="s1"> 
+        casillas[</span><span class="s3">5</span><span class="s1">] = R.id.b3</span><span class="s2">;</span><span class="s1"> 
+        casillas[</span><span class="s3">6</span><span class="s1">] = R.id.c1</span><span class="s2">;</span><span class="s1"> 
+        casillas[</span><span class="s3">7</span><span class="s1">] = R.id.c2</span><span class="s2">;</span><span class="s1"> 
+        casillas[</span><span class="s3">8</span><span class="s1">] = R.id.c3</span><span class="s2">;</span><span class="s1"> 
+    } 
+ 
+} 
+</span></pre>
+</body>
+</html>

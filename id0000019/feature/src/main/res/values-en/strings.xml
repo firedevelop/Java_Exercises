@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tic, Tac, Toe</string>
+    <string name="unJugador">1 Player</string>
+    <string name="dosJugadores">2 Players</string>
+    <string name="facil">Easy</string>
+    <string name="imposible">Insane</string>
+    <string name="normal">Average</string>
+    <string name="aspasGanan">Crosses Win!</string>
+    <string name="circulosGanan">Circles Win!</string>
+    <string name="empate">Tie!</string>
+    <string name="casilla">Box</string>
+    <string name="aceptar">Accept</string>
+    <string name="resultado">Result</string>
+</resources>

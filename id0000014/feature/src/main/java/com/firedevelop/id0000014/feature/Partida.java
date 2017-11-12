@@ -63,7 +63,9 @@ public class Partida {
     private int dosEnRaya(int jugadorEnTurno){
         int casilla = -1;
         int cuantasLleva = 0;
+        // recorremos el array COMBINACIONES, como si hicieramos "for(int i=0;i<COMBINACIONES.length;i++)"
         for (int[] combinacion : COMBINACIONES) {
+            //almacenamos en pos el contenido de "combinacion"
             for (int pos : combinacion) {
                 if (marcadas[pos] == jugadorEnTurno) cuantasLleva++;
                 if (marcadas[pos] == 0) casilla = pos;
@@ -120,6 +122,7 @@ public class Partida {
      * al jugador que ha marcado la casilla.
      * @param casilla casilla marcada por el jugador.
      * @return devuelve true si la operación se ha completado o false si la casilla estaba utilizada.
+     * este metodo es un poco diferente del profesor Juan, pero funciona igual lo que queremos es obtener un true cuando le pasamos una casilla ocupada como marcadas[4]=4
      */
     public boolean casillaOcupada(int casilla){
         if(marcadas[casilla] != 0){
@@ -132,6 +135,7 @@ public class Partida {
 
     /**
      * Metodo que se encarga de rellenar la tabla o array que almacenara todas la casillas.
+     * al comenzar la partida aqui estamos poniendo todas las casillas del array con valor 0.
      */
     private void rellenarTablaMarcadas(){
         marcadas = new int[9];

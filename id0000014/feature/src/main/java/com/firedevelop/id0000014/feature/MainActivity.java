@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
     // vamos a trabarjar con modularizacion, por lo tanto crearemos otro archivo llamado Partida.java
     private Partida partida;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +77,7 @@ public class MainActivity extends Activity {
         // aqui le pasamos al constructor de esta clase la difultad, para que la aplique antes de comenzar la partida
         partida = new Partida(dificultad);
         // aqui deshabilitamos los botones para que no se muestren una vez elegidas las opciones
+        // si no lo deshabilitamos los botones se pueden seguir pulsando durante la partida
         findViewById(R.id.unJugador).setEnabled(false);
         findViewById(R.id.facil).setEnabled(false);
         findViewById(R.id.normal).setEnabled(false);
@@ -97,6 +99,8 @@ public class MainActivity extends Activity {
         int casilla = 0;
         for(int i = 0; i < 9; i++){
             if( casillas[i] == vista.getId() ){
+                // justo aqui comienza la partida, pues el programa se da cuenta de que hay una casilla marcada
+                // si hemos pulsado por ejemplo la casilla 4, el bucle terminar por encontrar esto: casilla[4]=R.id.b2  Y en este momento la variable casilla=i, sera casilla=4  que indica que esta marcada y hace break, y se envia la informacion al archivo Partida.java por medio del metodo que vienen a continuacion llamado "partida.casillaOcupada(casilla)"
                 casilla = i;
                 break;
             }
@@ -108,7 +112,8 @@ public class MainActivity extends Activity {
         //toast.setGravity(Gravity.CENTER); // esto es para decirle donde se va a mostar, es decir en el centro de la pantalla
         // toast.show(); // y con esto le decimos que lo muestre el toast
 
-
+        // aqui casilla justamente hereda el valor del metodo "public void toque" y por ejemplo es casilla=4  Y desde aqui se va al archivo Partida.java
+        // en el ejemplo del profesor Juan Gomez, el llama "comprueba_casilla" a "casillaOcupada"
         if( partida.casillaOcupada(casilla) ){
             return;
         }
