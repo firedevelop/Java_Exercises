@@ -19,10 +19,8 @@ public class Partida {
             , {2,5,8}
             , {0,4,8}
             , {2,4,6}};
-    /**
-     * Constructor
-     * tiene que recibir por parametro una dificultad, y dicha dificultad se almacenra en la
-     */
+    /** Constructor tiene que recibir por parametro una dificultad, y dicha dificultad se almacenra en la */
+
     public Partida(int dificultad){
         //this.DIFICULTAD se refiere al campo de la clase "public final int dificultad"
         //y el otro "dificultad" se refiere al argumento del constructor "public Partida(int dificultad)"
@@ -32,9 +30,9 @@ public class Partida {
         rellenarTablaMarcadas();
     }
 
-    /**
-     * Metodo que cambia el turno del jugador.
-     */
+/**
+* Metodo que cambia el turno del jugador.
+*/
     public int turno()
     {
         boolean empate = true;

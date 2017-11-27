@@ -28,8 +28,8 @@
 
         <Button
             android:id="@+id/unJugador"
-            android:text="@string/unJugador"
-            style="@style/boton" />
+            style="@style/boton"
+            android:text="@string/unJugador" />
 
         <RadioGroup
             android:id="@+id/configDificultad"
@@ -54,9 +54,9 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/dosJugador"
-            android:text="@string/dosJugadores"
-            style="@style/boton" />
+            android:id="@+id/dosJugadores"
+            style="@style/boton"
+            android:text="@string/dosJugadores" />
 
     </LinearLayout>
 

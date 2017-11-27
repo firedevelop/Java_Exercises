@@ -12,6 +12,9 @@ import android.widget.Toast;
 import com.firedevelop.id0000014.feature.R;
 
 public class MainActivity extends Activity {
+    private int jugador;
+    private int[] CASILLAS;
+    private Partida partida;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +38,9 @@ public class MainActivity extends Activity {
             imagen=(ImageView)findViewById((cadaCasilla));
             imagen.setImageResource(R.drawable.casilla);
         }
-        jugadores=1;
-        if(vista.getId()==R.id.dosJugador){
-            jugadores=2;
+        jugador =1;
+        if(vista.getId()==R.id.dosJugadores){
+            jugador =2;
         }
         RadioGroup configDificultad=(RadioGroup)findViewById(R.id.configDificultad);
         int id=configDificultad.getCheckedRadioButtonId();
@@ -50,21 +53,31 @@ public class MainActivity extends Activity {
 
         partida=new Partida(dificultad);
         ((Button)findViewById(R.id.unJugador)).setEnabled(false);
+        ((Button)findViewById(R.id.dosJugadores)).setEnabled(false);
         ((RadioGroup)findViewById(R.id.configDificultad)).setAlpha(0);
-        ((Button)findViewById(R.id.dosJugador)).setEnabled(false);
+
 
     }
-    public void toque(View mivista){
+    public void toque(View vista){
         if(partida==null){
             return;
         }
+        /**
+         *
+         * aqui obtenemos la casilla que se ha pulsado
+         * */
         int casilla=0;
         for(int i=0;i<9;i++){
-            if(CASILLAS[i]==mivista.getId()){
+            if(CASILLAS[i]==vista.getId()){
                 casilla=i;
                 break;
             }
         }
+        /** IMPEDIR QUE LAS CASILLAS CON CIRCULOS SE PUEDAN VOLVER A MARCAR
+        * le preguntamos si la casilla esta marcada
+        * por que si lo está gracias al return se va a salir
+        * del programa y no va a ir al siguiente metodo para marcar la casilla
+        */
         if(partida.comprueba_casilla(casilla)==false){
             return;
         }
@@ -76,6 +89,10 @@ public class MainActivity extends Activity {
             return;
         }
         casilla=partida.ia();
+        /** IMPEDIR QUE LAS CASILLAS CON ASPAS SE PUEDAN VOLVER A MARCAR
+         * Esto impedira que se puedan volver a marcar las casillas con aspas.
+         *
+         */
         while(partida.comprueba_casilla(casilla)!=true){
             casilla=partida.ia();
         }
@@ -83,6 +100,15 @@ public class MainActivity extends Activity {
         resultado=partida.turno();
         if(resultado>0){
             termina(resultado);
+        }
+    }
+    private void marca(int casilla){
+        ImageView imagen;
+        imagen=(ImageView)findViewById(CASILLAS[casilla]);
+        if(partida.jugador==1){
+            imagen.setImageResource(R.drawable.circulo);
+        }else{
+            imagen.setImageResource(R.drawable.aspa);
         }
     }
         // aunque se llame resultado no tiene nada que ver con "resultado" de arriba
@@ -96,23 +122,8 @@ public class MainActivity extends Activity {
             toast.show();
             partida=null;
             ((Button)findViewById(R.id.unJugador)).setEnabled(true);
+            ((Button)findViewById(R.id.dosJugadores)).setEnabled(true);
             ((RadioGroup)findViewById(R.id.configDificultad)).setAlpha(1);
-            ((Button)findViewById(R.id.dosJugador)).setEnabled(true);
+
         }
-
-        private void marca(int casilla){
-            ImageView imagen;
-            imagen=(ImageView)findViewById(CASILLAS[casilla]);
-            if(partida.jugador==1){
-                imagen.setImageResource(R.drawable.circulo);
-            }else{
-                imagen.setImageResource(R.drawable.aspa);
-            }
-    }
-
-    private int jugadores;
-    private int[] CASILLAS;
-    private Partida partida;
-
-
 }
