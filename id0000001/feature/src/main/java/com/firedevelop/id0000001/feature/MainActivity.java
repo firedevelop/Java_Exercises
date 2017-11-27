@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -16,19 +17,19 @@ import android.widget.Toast;
 import com.firedevelop.id0000014.feature.R;
 public class MainActivity extends Activity{
     private int jugador;
-    private int[]CASILLAS;
+    private int [] CASILLAS;
     private Partida partida;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle saveInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CASILLAS=new int[9];
-        CASILLAS[0]=a1;
-        CASILLAS[1]=a2;
-        CASILLAS[2]=a3;
+        CASILLAS[0]=R.id.a1;
+        CASILLAS[1]=R.id.a2;
+        CASILLAS[2]=R.id.a3;
     }
+
     public void aJugar(View vista){
         ImageView imagen;
         for(int cadaCasilla:CASILLAS){
@@ -63,16 +64,14 @@ public class MainActivity extends Activity{
                 break;
             }
         }
-        if(partida.comprueba_casilla(casilla))==false{
+        if(partida.comprueba_casilla()==false){
             return;
         }
         marca(casilla);
         casilla=partida.ia();
-        partida.turno();
         marcas(casilla);
-        partida.turno();
-
     }
+
     private void marca(int casilla){
         ImageView imagen;
         imagen=(ImageView)findViewById(CASILLAS[casilla]);
@@ -84,8 +83,15 @@ public class MainActivity extends Activity{
     }
     private void termina(int resultado){
         String mensaje;
-        if(resultado==1) mensaje="G c";
-        else if(resultado==2)
+        if(resultado==1) mensaje="Gc";
+        else if(resultado==2) mensaje="Ga";
+        else mensaje="E";
+        Toast toast=Toast.makeText(this,mensaje,Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER,0,0);
+        toast.show();
+        partida=null;
+        ((Button)findViewById(R.id.unJugador)).setEnabled(true);
+        ((Button)findViewById(R.id.dosJugadores)).setEnabled(true);
+        ((RadioGroup)findViewById(R.id.configDificultad)).setAlpha(1);
     }
-
 }
