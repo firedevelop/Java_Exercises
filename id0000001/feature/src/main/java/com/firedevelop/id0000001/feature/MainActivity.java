@@ -17,11 +17,11 @@ import android.widget.Toast;
 import com.firedevelop.id0000014.feature.R;
 public class MainActivity extends Activity{
     private int jugador;
-    private int [] CASILLAS;
+    private int[] CASILLAS;
     private Partida partida;
 
     @Override
-    protected void onCreate(Bundle saveInstanceState){
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -29,7 +29,6 @@ public class MainActivity extends Activity{
         CASILLAS[1]=R.id.a2;
         CASILLAS[2]=R.id.a3;
     }
-
     public void aJugar(View vista){
         ImageView imagen;
         for(int cadaCasilla:CASILLAS){
@@ -43,12 +42,12 @@ public class MainActivity extends Activity{
         RadioGroup configDificultad=(RadioGroup)findViewById(R.id.configDificultad);
         int id=configDificultad.getCheckedRadioButtonId();
         int dificultad=0;
-        if(id==R.id.normal){
+        if(vista.getId()==R.id.normal){
             dificultad=1;
-        }else if(id==R.id.imposible){
+        }else if(vista.getId()==R.id.imposible){
             dificultad=2;
         }
-        partida=new Partida(dificultad);
+        partida=new Partida(View vista);
         ((Button)findViewById(R.id.unJugador)).setEnabled(false);
         ((Button)findViewById(R.id.dosJugadores)).setEnabled(false);
         ((RadioGroup)findViewById(R.id.configDificultad)).setAlpha(0);
@@ -64,34 +63,34 @@ public class MainActivity extends Activity{
                 break;
             }
         }
-        if(partida.comprueba_casilla()==false){
+        if(partida.comprueba_casilla(casilla)==false){
             return;
         }
         marca(casilla);
-        casilla=partida.ia();
-        marcas(casilla);
-    }
+        resultado=partida.turno();
 
+    }
     private void marca(int casilla){
         ImageView imagen;
-        imagen=(ImageView)findViewById(CASILLAS[casilla]);
-        if(partida.jugador==1){
-            imagen.setImageResource(R.drawable.circulo);
-        }else{
-            imagen.setImageResource(R.drawable.aspa);
+        imagen=(ImageView)findViewById(CASILLAS[casilla]){
+            if(partida.jugador==1){
+                imagen.setImageResource(R.drawable.circulo);
+            }else{
+                imagen.setImageResource(R.drawable.aspa);
+            }
         }
     }
     private void termina(int resultado){
         String mensaje;
         if(resultado==1) mensaje="Gc";
-        else if(resultado==2) mensaje="Ga";
-        else mensaje="E";
+        else if(resultado==2)mensaje="Ga";
+        else mensaje="Empate";
         Toast toast=Toast.makeText(this,mensaje,Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER,0,0);
         toast.show();
         partida=null;
         ((Button)findViewById(R.id.unJugador)).setEnabled(true);
         ((Button)findViewById(R.id.dosJugadores)).setEnabled(true);
-        ((RadioGroup)findViewById(R.id.configDificultad)).setAlpha(1);
+        ((RadioGroup)findViewById(R.id.configDificultad)).setAlpha(0);
     }
 }

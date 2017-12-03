@@ -44,7 +44,7 @@ public class Partida{
         System.out.println("*********** JUGADOR "+jugador+"***********"+"ult_movimiento="+ult_movimiento+ " empate="+empate+" jugador="+jugador);
         for(int i=0;i<COMBINACIONES.length;i++){
             for(int pos:COMBINACIONES[i]){
-                System.out.println("Valor en posición " + pos + " " + CASILLAS[pos]);
+                System.out.println("Valor en posicion " + pos + " " + CASILLAS[pos]);
                 if(CASILLAS[pos]!=jugador)ult_movimiento=false;
                 /**
                  * Si nos damos cuenta y estamos al principio o en mitad de una partida, podemos ver como en el  array
@@ -58,8 +58,8 @@ public class Partida{
             }
             System.out.println("-------------------------------------------------"+"ult_movimiento="+ult_movimiento+" empate="+empate+" jugador="+jugador);
             if(ult_movimiento)return jugador;
+            System.out.print("ult_movimiento after pos= " + ult_movimiento + "\n");
             ult_movimiento=true;
-
         }
         if(empate){
             return 3;
@@ -73,6 +73,7 @@ public class Partida{
          */
         return 0;
     }
+// Explicacion de este metodo justo aqui: https://youtu.be/TGg9uQmB4pc?t=20m11s
     public int dosEnRaya(int jugador_en_turno){
         int casilla=-1;
         int cuantas_lleva=0;
@@ -107,3 +108,4 @@ public class Partida{
         return casilla;
     }
 }
+
