@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">id0000031</string>
+    <string name="dificultad">Escoge nivel:</string>
+    <string name="facil">facil</string>
+    <string name="medio">normal</string>
+    <string name="dificil">dificil</string>
+</resources>

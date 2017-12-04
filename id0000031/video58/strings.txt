@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Prueba_Rebote2</string>
+
+    <string name="dificultad">Please choose starting level:</string>
+    <string name="facil">Easy</string>
+    <string name="medio">Standard</string>
+    <string name="dificil">Dificult</string>
+</resources>
