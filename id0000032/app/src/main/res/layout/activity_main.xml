@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.firedevelop.id0000032.MainActivity"
+
+    style="@style/pantalla">
+
+    <TextView
+        android:id="@+id/texto_botones"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/facil"
+        style="@style/texto_botones"/>
+
+    <Button
+        android:id="@+id/facil"
+        style="@style/boton_Dificultad"
+        android:layout_alignLeft="@+id/medio"
+        android:layout_alignStart="@+id/medio"
+        android:layout_below="@+id/medio"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:text="@string/facil" />
+
+    <Button
+        android:id="@+id/medio"
+        android:layout_toLeftOf="@+id/dificil"
+        android:layout_alignBaseline="@+id/dificil"
+        android:text="@string/medio"
+        style="@style/boton_Dificultad"/>
+
+    <Button
+        android:id="@+id/dificil"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/texto_botones"
+        android:text="@string/dificil"
+        style="@style/boton_Dificultad"/>
+
+    <Button
+        style="@style/boton_Ayuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/dificil"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/dificil"
+        android:layout_marginBottom="57dp" />
+
+
+</RelativeLayout>
+

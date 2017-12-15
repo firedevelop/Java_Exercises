@@ -19,10 +19,13 @@
 
     <Button
         android:id="@+id/facil"
-        android:layout_toLeftOf="@+id/medio"
-        android:layout_alignBaseline="@+id/dificil"
-        android:text="@string/facil"
-        style="@style/boton_Dificultad"/>
+        style="@style/boton_Dificultad"
+        android:layout_alignLeft="@+id/medio"
+        android:layout_alignStart="@+id/medio"
+        android:layout_below="@+id/medio"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:text="@string/facil" />
 
     <Button
         android:id="@+id/medio"
@@ -37,6 +40,15 @@
         android:layout_below="@+id/texto_botones"
         android:text="@string/dificil"
         style="@style/boton_Dificultad"/>
+
+    <Button
+        style="@style/boton_Ayuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/dificil"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/dificil"
+        android:layout_marginBottom="57dp" />
 
 
 </RelativeLayout>

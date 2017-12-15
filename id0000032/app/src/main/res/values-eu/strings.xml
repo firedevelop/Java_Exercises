@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">id0000031</string>
+    <string name="dificultad">Escoge nivel:</string>
+    <string name="facil">facil</string>
+    <string name="medio">normal</string>
+    <string name="dificil">dificil</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="texto_ayuda">El objetivo del juego es evitar que la pelota caiga al suelo, tocando la pelota con el dedo \n\n
+    Para empujar la pelo en una dirección correcta, pulsaremos la pantalla en la dirección contraria
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Ánimo!!!</string>
+    <string name="volver">volver</string>
+</resources>
